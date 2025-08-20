@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 import {
   Alert,
@@ -119,11 +120,21 @@ const ProfileScreen = () => {
           </TouchableOpacity>
         </View>
 
+        <TouchableOpacity
+          style={styles.logoutButton}
+          onPress={() => {
+            router.push("/loginScreen");
+          }}
+        >
+          <Ionicons name="log-out-outline" size={20} color="#007AFF" />
+          <Text style={styles.loginText}>Sign In</Text>
+        </TouchableOpacity>
+
         {/* Logout Button */}
-        <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+        {/* <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
           <Ionicons name="log-out-outline" size={20} color="#dc3545" />
           <Text style={styles.logoutText}>Sign Out</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </ScrollView>
     </SafeAreaView>
   );
@@ -258,6 +269,12 @@ const styles = StyleSheet.create({
   logoutText: {
     fontSize: 16,
     color: "#dc3545",
+    fontWeight: "500",
+    marginLeft: 8,
+  },
+  loginText: {
+    fontSize: 16,
+    color: "#007AFF",
     fontWeight: "500",
     marginLeft: 8,
   },
