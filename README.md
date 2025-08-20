@@ -18,7 +18,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 # GarageSpace - Storage Marketplace App
 
-A React Native marketplace application for renting unused garage storage spaces, similar to Airbnb but for storage.
+A React Native garage marketplace application for renting unused garage storage spaces, similar to Airbnb but for storage.
 
 ## Features Implemented
 
@@ -34,7 +34,7 @@ A React Native marketplace application for renting unused garage storage spaces,
 
 ### UI/UX Features
 
-- **Native Navigation** - Bottom tabs with stack navigation
+- **Native Navigation** - Bottom tabs
 - **Image Carousel** - Swipeable photo galleries for listings
 - **Interactive Maps** - Location selection and viewing with markers
 - **Form Validation** - Real-time form validation with error handling
@@ -46,7 +46,6 @@ A React Native marketplace application for renting unused garage storage spaces,
 - **Framework**: React Native with Expo
 - **Language**: TypeScript
 - **State Management**: Zustand (lightweight alternative to Redux)
-- **Navigation**: React Navigation 6
 - **Forms**: React Hook Form
 - **Maps**: React Native Maps
 - **Icons**: Expo Vector Icons (Ionicons)
@@ -56,26 +55,26 @@ A React Native marketplace application for renting unused garage storage spaces,
 ## Project Structure
 
 ```
-src/
-├── screens/           # All screen components
-│   ├── HomeScreen.tsx          # Browse listings
-│   ├── SearchScreen.tsx        # Search with map view
-│   ├── CreateListingScreen.tsx # Create new listings
-│   ├── ListingDetailScreen.tsx # Detailed listing view
-│   ├── BookingsScreen.tsx      # User's bookings
-│   ├── ProfileScreen.tsx       # User profile
-│   └── LoginScreen.tsx         # Authentication
+app/
+├── (tab)/
+│   ├── index.tsx          # Browse listings
+│   ├── search.tsx        # Search with map view
+│   ├── create.tsx # Create new listings
+│   ├── bookings.tsx      # User's bookings
+│   ├── profile.tsx       # User profile
+|── login.tsx            # Authentication
+|
 ├── store/             # Zustand state management
 │   ├── authStore.ts            # Authentication state
 │   └── listingsStore.ts        # Listings and bookings state
-└── App.tsx           # Main app component with navigation
+
 ```
 
 ## Installation & Setup
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js
 - npm or yarn
 - Expo CLI (`npm install -g expo-cli`)
 - iOS Simulator (Mac) or Android Studio/device
@@ -92,36 +91,12 @@ cd GarageSpace
 2. **Install Dependencies**
 
 ```bash
-npm install @react-navigation/native @react-navigation/bottom-tabs @react-navigation/stack
-npx expo install react-native-screens react-native-safe-area-context react-native-gesture-handler
-npm install react-native-maps expo-location expo-image-picker
-npm install react-hook-form zustand
-npx expo install expo-font expo-splash-screen
+npm install
+Or
+npx expo install
 ```
-
-3. **Copy Project Files**
-
-- Copy all the provided source files into your project structure
-- Replace the default App.tsx with the provided version
-- Update package.json with the provided dependencies
-
-4. **Run the Project**
-
-```bash
-npm start
-# or
-expo start
-```
-
-5. **Run on Device/Simulator**
-
-- Press 'i' for iOS Simulator
-- Press 'a' for Android Emulator
-- Scan QR code with Expo Go app on physical device
 
 ## Current Features Status
-
-### ✅ Completed (Day 1-3 Sprint)
 
 - User authentication (mock implementation)
 - Listing creation with photos and location
@@ -133,7 +108,7 @@ expo start
 
 ### 🚧 In Progress / Next Steps
 
-- Real backend integration (Firebase/Supabase)
+- Real backend integration (Firebase/Supabase/ or an actual backend )
 - In-app messaging system
 - Payment processing
 - Push notifications
@@ -144,11 +119,7 @@ expo start
 
 ### State Management - Zustand
 
-Chose Zustand over Redux for its simplicity and smaller bundle size. Perfect for rapid prototyping while maintaining scalability.
-
-### Navigation - React Navigation 6
-
-Used bottom tabs for main navigation with stack navigation for detail screens. Provides native feel and smooth transitions.
+Chose Zustand over Redux because it is lightweight.
 
 ### Maps - React Native Maps
 
@@ -198,8 +169,4 @@ Implemented comprehensive mock data to demonstrate functionality without backend
 ### UI/UX Decisions
 
 - Familiar patterns from popular marketplace apps
-- Consistent color scheme and spacing
 - Accessible design with proper contrast
-- Native platform conventions for navigation
-
-This project demonstrates a solid foundation for a storage marketplace app with room for extensive feature expansion and backend integration.
